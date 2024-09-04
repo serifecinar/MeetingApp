@@ -9,7 +9,9 @@ namespace MeetinApp.Controllers
         // localhost/home/index        
         public IActionResult Index()
         {
-            return View();
+            int saat= DateTime.Now.Hour;
+            var selamlama = saat > 12 ? "İyi Günler":"Günaydın";
+            return View(model: selamlama);
         }
     }
 }
