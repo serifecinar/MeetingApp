@@ -4,6 +4,9 @@ builder.Services.AddControllersWithViews();//mvc şablonu projeye tanıtılmış
 
 var app = builder.Build();
 
+app.UseStaticFiles();//wwwroot altındaki dosyalar erişime açılır bu kod ile 
+app.UseRouting();
+
 //proje şablonları--
 //mvc
 //rest api
