@@ -1,5 +1,6 @@
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddControllersWithViews();//mvc şablonu projeye tanıtılmış oluyor 
+builder.Services.AddControllersWithViews();//mvc şablonu projeye tanıtılmış oluyor - servis ekledik mvc için
+
 
 var app = builder.Build();
 
@@ -8,7 +9,12 @@ var app = builder.Build();
 //rest api
 //razor pages
 
-app.MapGet("/", () => "Hello World!");
-app.MapGet("/abc", () => "deneme");
 
+//controller/action/id?
+//app.MapDefaultControllerRoute();
+
+app.MapControllerRoute(
+    name:"default",
+    pattern:"{controller=Home}/{action=Index}/{id?}"
+);
 app.Run();
