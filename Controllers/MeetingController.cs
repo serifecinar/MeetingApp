@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-
+using MeetingApp.Models;
 namespace MeetingApp.Controllers
 {
     public class MeetingController : Controller
@@ -17,12 +17,8 @@ namespace MeetingApp.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Apply(string Name,string Phone,string Email,bool WillAttend)
+        public IActionResult Apply(UserInfo model)
         {
-            Console.WriteLine(Name);
-            Console.WriteLine(Phone);
-            Console.WriteLine(Email);
-            Console.WriteLine(WillAttend);
             return View();
         }
         [HttpGet]
