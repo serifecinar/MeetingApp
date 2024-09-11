@@ -25,5 +25,11 @@ namespace MeetingApp.Controllers
 
             return View(Repository.Users);
         }
+        //meeting/details/id
+        public IActionResult Details(int id)
+        {
+            return View(Repository.GetById(id));
+        }
+
     }
 }
