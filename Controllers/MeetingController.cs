@@ -36,6 +36,5 @@ namespace MeetingApp.Controllers
         {
             return View(Repository.GetById(id));
         }
-
     }
 }

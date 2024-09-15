@@ -6,16 +6,17 @@ namespace MeetingApp.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Ad alanı zorunlu")]
         public string? Name { get; set; } // Required olması için null değer kabul etmesi lazım
 
-        [Required]
+        [Required(ErrorMessage ="Telefon alanı zorunlu")]
         public string? Phone { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Email alanı zorunlu")]
+        [EmailAddress(ErrorMessage ="Hatalı email")]
         public string? Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Katılım durumunuzu belirtiniz")]
         public bool? WillAttend { get; set; }
     }
 }
