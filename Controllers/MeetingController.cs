@@ -13,11 +13,17 @@ namespace MeetingApp.Controllers
         [HttpPost]
         public IActionResult Apply(UserInfo model)
         {
+            if(ModelState.IsValid)
+            {
             // database
             // list
             Repository.CreateUser(model);
             ViewBag.UserCount=Repository.Users.Where(info=>info.WillAttend==true).Count();
             return View("Thanks",model);
+            }
+            else {
+                return View(model);
+            }
         }
         [HttpGet]
         public IActionResult List()
